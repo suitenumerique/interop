@@ -32,8 +32,8 @@ services:
     networks:
       lasuite: {}
     ports:
-      - "127.0.0.1:9905:9000"
-      - "127.0.0.1:9906:9001"
+      - "127.0.0.1:8001:9000"
+      - "127.0.0.1:8002:9001"
     env_file:
       - env.d/development/minio
     volumes:
@@ -55,7 +55,7 @@ services:
       - start-dev
       - --features=preview
       - --import-realm
-      - --hostname=http://localhost:8004
+      - --hostname=http://keycloak.lasuite.localhost:8004
       - --hostname-strict=false
       - --health-enabled=true
       - --metrics-enabled=true

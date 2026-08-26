@@ -40,15 +40,15 @@ Start services:
 make run
 ```
 
-All services should be up and running. You can test the keycloak service by
-opening the following link with your favorite browser: http://localhost:8004
+All services should be up and running. You can test services with development
+credentials by opening the following links with your favorite browser:
 
-Default admin credentials are:
-
-| field    | value   |
-| -------- | ------- |
-| username | `admin` |
-| password | `admin` |
+| service         | URL                                    | field    | value      |
+| --------------- | -------------------------------------- | -------- | ---------- |
+| Keycloak        | http://keycloak.lasuite.localhost:8004 | username | `admin`    |
+|                 |                                        | password | `admin`    |
+| Minio (console) | http://minio.lasuite.localhost:8002    | username | `lasuite`  |
+|                 |                                        | password | `password` |
 
 You can stop running services using:
 
