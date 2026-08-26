@@ -14,6 +14,8 @@ services:
 
   mailcatcher:
     image: sj26/mailcatcher:latest
+    networks:
+      lasuite: {}
     ports:
       - "127.0.0.1:8000:1080"
 
@@ -29,11 +31,11 @@ services:
       retries: 300
     networks:
       lasuite: {}
+    ports:
+      - "127.0.0.1:9905:9000"
+      - "127.0.0.1:9906:9001"
     env_file:
       - env.d/development/minio
-    ports:
-      - '127.0.0.1:9905:9000'
-      - '127.0.0.1:9906:9001'
     volumes:
       - ./data/minio:/data
 
