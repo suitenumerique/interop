@@ -40,9 +40,8 @@ Start services:
 make run
 ```
 
-All services should be up and running. You can test that the keycloak service
-is up and running by opening thie following link with your favorite browser:
-http://localhost:8004
+All services should be up and running. You can test the keycloak service by
+opening the following link with your favorite browser: http://localhost:8004
 
 Default admin credentials are:
 
