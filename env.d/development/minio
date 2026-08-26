@@ -1,0 +1,3 @@
+# Minio configuration
+MINIO_ROOT_USER=lasuite
+MINIO_ROOT_PASSWORD=password

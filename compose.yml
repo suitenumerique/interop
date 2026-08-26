@@ -1,0 +1,102 @@
+name: lasuite
+
+services:
+
+  crowdin:
+    image: crowdin/cli:3.16.0
+    user: "${DOCKER_USER:-1000}"
+    env_file:
+      - env.d/development/crowdin
+      - env.d/development/crowdin.local
+    working_dir: /app
+    volumes:
+      - ".:/app"
+
+  mailcatcher:
+    image: sj26/mailcatcher:latest
+    ports:
+      - "127.0.0.1:8000:1080"
+
+  minio:
+    image: minio/minio
+    user: ${DOCKER_USER:-1000}
+    entrypoint: ""
+    command: minio server --console-address :9001 /data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 1s
+      timeout: 20s
+      retries: 300
+    networks:
+      lasuite: {}
+    env_file:
+      - env.d/development/minio
+    ports:
+      - '127.0.0.1:9905:9000'
+      - '127.0.0.1:9906:9001'
+    volumes:
+      - ./data/minio:/data
+
+  node:
+    image: node:22
+    user: "${DOCKER_USER:-1000}"
+    networks:
+      lasuite: {}
+    environment:
+      HOME: /tmp 
+    volumes:
+      - ".:/app"
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.6
+    command:
+      - start-dev
+      - --features=preview
+      - --import-realm
+      - --hostname=http://localhost:8004
+      - --hostname-strict=false
+      - --health-enabled=true
+      - --metrics-enabled=true
+    healthcheck:
+      test: ['CMD-SHELL', 'exec 3<>/dev/tcp/localhost/9000; echo -e "GET /health/live HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n" >&3; grep "HTTP/1.1 200 OK" <&3']
+      start_period: 5s
+      interval: 1s
+      timeout: 2s
+      retries: 300
+    networks:
+      lasuite: {}
+    ports:
+      - "127.0.0.1:8004:8080"
+    env_file:
+      - env.d/development/keycloak
+    volumes:
+      - ./data/keycloak/realm.json:/opt/keycloak/data/import/realm.json
+    depends_on:
+      keycloak-postgresql:
+        condition: service_healthy
+        restart: true
+
+  keycloak-postgresql:
+    image: postgres:14.3
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 1s
+      timeout: 2s
+      retries: 300
+    networks:
+      lasuite: {}
+    ports:
+      - "127.0.0.1:8003:5432"
+    env_file:
+      - env.d/development/keycloak-postgresql
+
+  redis:
+    image: redis:5
+    networks:
+      lasuite: {}
+    ports:
+      - "127.0.0.1:8005:6379"
+
+networks:
+  lasuite:
+    name: lasuite

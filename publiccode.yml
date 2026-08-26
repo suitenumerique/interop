@@ -1,0 +1,27 @@
+publiccodeYmlVersion: "2.4.0"
+name: Interop 
+url: https://github.com/suitenumerique/interop
+landingURL: https://github.com/suitenumerique/interop
+creationDate: 2026-08-26
+logo: https://raw.githubusercontent.com/suitenumerique/interop/main/interop/assets/interop-logo.png
+usedBy:
+  - Direction interministériel du numérique (DINUM)
+fundedBy:
+  - name: Direction interministériel du numérique (DINUM)
+    url: https://www.numerique.gouv.fr
+roadmap: "https://github.com/orgs/suitenumerique/projects/"
+softwareType: "standalone/other"
+description:
+  en:
+    shortDescription: "A repository dedicated to interoperabilities for LaSuite (docs, development resources, tools, etc.)"
+  fr:
+    shortDescription: "Un dépôt dédié aux interoperabilités pour les services de LaSuite (documentation, ressources de développement, outils, etc.)"
+legal:
+  license: MIT
+maintenance:
+  type: internal
+  contacts:
+    - name: "quentin.bey"
+      email: "quentin.bey@numerique.gouv.fr"
+    - name: "samuel.paccoud"
+      email: "samuel.paccoud@numerique.gouv.fr"
