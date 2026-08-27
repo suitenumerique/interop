@@ -39,16 +39,6 @@ services:
     volumes:
       - ./data/minio:/data
 
-  node:
-    image: node:22
-    user: "${DOCKER_USER:-1000}"
-    networks:
-      lasuite: {}
-    environment:
-      HOME: /tmp 
-    volumes:
-      - ".:/app"
-
   keycloak:
     image: quay.io/keycloak/keycloak:26.6
     command:
