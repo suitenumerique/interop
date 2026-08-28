@@ -748,10 +748,10 @@
       "clientAuthenticatorType": "client-secret",
       "secret": "ThisIsAnExampleKeyForDevPurposeOnly",
       "redirectUris": [
-        "http://localhost:8071/*"
+        "http://menshen.lasuite.localhost:9000/*"
       ],
       "webOrigins": [
-        "http://localhost:8071"
+        "http://menshen.lasuite.localhost:9000"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -816,19 +816,19 @@
       "clientId": "playground-source",
       "name": "",
       "description": "",
-      "rootUrl": "http://source.localhost:8072",
-      "adminUrl": "http://source.localhost:8072",
-      "baseUrl": "http://source.localhost:8072",
+      "rootUrl": "http://source.playground.menshen.lasuite.localhost:9002",
+      "adminUrl": "http://source.playground.menshen.lasuite.localhost:9002",
+      "baseUrl": "http://source.playground.menshen.lasuite.localhost:9002",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "dNnEVcFwNgj4dD3w3HgfuqmkmwFrl9EC",
       "redirectUris": [
-        "http://source.localhost:8072/*"
+        "http://source.playground.menshen.lasuite.localhost:9002/*"
       ],
       "webOrigins": [
-        "http://source.localhost:8072/*"
+        "http://source.playground.menshen.lasuite.localhost:9002/*"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -846,7 +846,7 @@
         "standard.token.exchange.enabled": "false",
         "oauth2.jwt.authorization.grant.enabled": "false",
         "frontchannel.logout.session.required": "true",
-        "post.logout.redirect.uris": "http://source.localhost:8072/*",
+        "post.logout.redirect.uris": "http://source.playground.menshen.lasuite.localhost:9002/*",
         "oauth2.device.authorization.grant.enabled": "false",
         "backchannel.logout.revoke.offline.tokens": "false",
         "realm_client": "false",
@@ -877,19 +877,19 @@
       "clientId": "playground-target",
       "name": "",
       "description": "",
-      "rootUrl": "http://target.localhost:8073",
-      "adminUrl": "http://target.localhost:8073",
-      "baseUrl": "http://target.localhost:8073",
+      "rootUrl": "http://target.playground.menshen.lasuite.localhost:9003",
+      "adminUrl": "http://target.playground.menshen.lasuite.localhost:9003",
+      "baseUrl": "http://target.playground.menshen.lasuite.localhost:9003",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "dijkjHMFknpNIS6rHfrHMttYQCospeF9",
       "redirectUris": [
-        "http://target.localhost:8073/*"
+        "http://target.playground.menshen.lasuite.localhost:9003/*"
       ],
       "webOrigins": [
-        "http://target.localhost:8073/*"
+        "http://target.playground.menshen.lasuite.localhost:9003/*"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -906,7 +906,7 @@
         "client.secret.creation.time": "1775575079",
         "standard.token.exchange.enabled": "false",
         "oauth2.jwt.authorization.grant.enabled": "false",
-        "post.logout.redirect.uris": "http://target.localhost:8073/*",
+        "post.logout.redirect.uris": "http://target.playground.menshen.lasuite.localhost:9003/*",
         "frontchannel.logout.session.required": "true",
         "oauth2.device.authorization.grant.enabled": "false",
         "backchannel.logout.revoke.offline.tokens": "false",
