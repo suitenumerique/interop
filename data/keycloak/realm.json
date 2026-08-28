@@ -59,6 +59,62 @@
         }
       ],
       "realmRoles": ["user"]
+    },
+    {
+      "username": "drive",
+      "email": "drive@drive.world",
+      "firstName": "John",
+      "lastName": "Doe",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "drive"
+        }
+      ],
+      "realmRoles": ["user"]
+    },
+    {
+      "username": "user-e2e-chromium",
+      "email": "user@chromium.test",
+      "firstName": "E2E",
+      "lastName": "Chromium",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "password-e2e-chromium"
+        }
+      ],
+      "realmRoles": ["user"]
+    },
+    {
+      "username": "user-e2e-webkit",
+      "email": "user@webkit.test",
+      "firstName": "E2E",
+      "lastName": "Webkit",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "password-e2e-webkit"
+        }
+      ],
+      "realmRoles": ["user"]
+    },
+    {
+      "username": "user-e2e-firefox",
+      "email": "user@firefox.test",
+      "firstName": "E2E",
+      "lastName": "Firefox",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "password-e2e-firefox"
+        }
+      ],
+      "realmRoles": ["user"]
     }
   ],
   "roles": {
@@ -420,7 +476,8 @@
           "containerId": "06721011-1061-4ca7-944f-be2a20719e20",
           "attributes": {}
         }
-      ]
+      ],
+      "drive": []
     }
   },
   "groups": [],
@@ -968,6 +1025,75 @@
           }
         }
       ],
+      "defaultClientScopes": [
+        "web-origins",
+        "acr",
+        "roles",
+        "profile",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt"
+      ]
+    },
+    {
+      "id": "b2e78549-92e0-471a-aa9d-a3855c6597ee",
+      "clientId": "drive",
+      "name": "",
+      "description": "",
+      "rootUrl": "",
+      "adminUrl": "",
+      "baseUrl": "",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "ThisIsAnExampleKeyForDevPurposeOnly",
+      "redirectUris": [
+        "http://backend.drive.lasuite.localhost:8200",
+        "http://nginx.drive.lasuite.localhost:8202",
+        "http://frontend.drive.lasuite.localhost:8203"
+      ],
+      "webOrigins": [
+        "http://backend.drive.lasuite.localhost:8200",
+        "http://nginx.drive.lasuite.localhost:8202",
+        "http://frontend.drive.lasuite.localhost:8203"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "publicClient": false,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "attributes": {
+        "access.token.lifespan": "-1",
+        "client.secret.creation.time": "1707820779",
+        "user.info.response.signature.alg": "RS256",
+        "post.logout.redirect.uris": "http://localhost:8070/*##http://localhost:3200/*##http://localhost:3000/*",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "use.jwks.url": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "use.refresh.tokens": "true",
+        "tls-client-certificate-bound-access-tokens": "false",
+        "oidc.ciba.grant.enabled": "false",
+        "backchannel.logout.session.required": "true",
+        "client_credentials.use_refresh_token": "false",
+        "acr.loa.map": "{}",
+        "require.pushed.authorization.requests": "false",
+        "display.on.consent.screen": "false",
+        "client.session.idle.timeout": "-1",
+        "token.response.type.bearer.lower-case": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
       "defaultClientScopes": [
         "web-origins",
         "acr",
