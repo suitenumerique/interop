@@ -41,6 +41,12 @@ down: ## clean LaSuite core services
 	$(COMPOSE) down
 .PHONY: stop
 
+update-realm:
+	$(COMPOSE) stop keycloak
+	$(COMPOSE) run keycloak import --file /opt/keycloak/data/import/realm.json
+	$(COMPOSE) up -d keycloak
+.PHONY: update-realm
+
 # -- Misc
 clean: ## restore repository state as it was freshly cloned
 	git clean -idx
