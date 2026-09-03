@@ -768,7 +768,7 @@
         "user.info.response.signature.alg": "RS256",
         "oauth2.jwt.authorization.grant.enabled": "false",
         "frontchannel.logout.session.required": "true",
-        "post.logout.redirect.uris": "http://localhost:8071/*",
+        "post.logout.redirect.uris": "http://menshen.lasuite.localhost:9000/*",
         "oauth2.device.authorization.grant.enabled": "false",
         "use.jwks.url": "false",
         "backchannel.logout.revoke.offline.tokens": "false",
