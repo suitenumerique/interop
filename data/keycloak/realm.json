@@ -1054,12 +1054,12 @@
       "secret": "ThisIsAnExampleKeyForDevPurposeOnly",
       "redirectUris": [
         "http://drive.lasuite.localhost:8200/*",
-        "http://nginx.drive.lasuite.localhost:8202/*",
+        "http://drive.lasuite.localhost:8202/*",
         "http://drive.lasuite.localhost:8203/*"
       ],
       "webOrigins": [
         "http://drive.lasuite.localhost:8200",
-        "http://nginx.drive.lasuite.localhost:8202",
+        "http://drive.lasuite.localhost:8202",
         "http://drive.lasuite.localhost:8203"
       ],
       "notBefore": 0,
@@ -1076,7 +1076,7 @@
         "access.token.lifespan": "-1",
         "client.secret.creation.time": "1707820779",
         "user.info.response.signature.alg": "RS256",
-        "post.logout.redirect.uris": "http://drive.lasuite.localhost:8200/*##http://nginx.drive.lasuite.localhost:8202/*##http://drive.lasuite.localhost:8203/*",
+        "post.logout.redirect.uris": "http://drive.lasuite.localhost:8200/*##http://drive.lasuite.localhost:8202/*##http://drive.lasuite.localhost:8203/*",
         "oauth2.device.authorization.grant.enabled": "false",
         "use.jwks.url": "false",
         "backchannel.logout.revoke.offline.tokens": "false",
