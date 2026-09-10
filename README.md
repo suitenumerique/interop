@@ -3,6 +3,11 @@
 A repository dedicated to interoperabilities for LaSuite (docs, development
 resources, tools, etc.)
 
+## Integration (for LaSuite developers)
+
+If you need to support LaSuite interoperabilities in your project, we invite
+you to read our [documentation](./docs/)
+
 ## Local Development (for contributors)
 
 Run services locally for development and testing.
